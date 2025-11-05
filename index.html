@@ -38,62 +38,44 @@ width: 240px;
 height: 400px;
 margin-top: 160px;
 
-animation: geeks 5s infinite;
+/* animation: body 19s infinite; */
 }
 
-@keyframes geeks {
-0% {
-margin-left: 10%;
-}
+@keyframes body {
+    0% {
+        margin-left: 50%;
+        background-color: red;
+    }
+    8% {
+        margin-left: 100%;
+        background-color: rgb(241, 161, 147);
+    }
+    23% {
+        margin-left: 0%;
+        background-color: rgb(81, 81, 216);
+    }
+    33% {
+        margin-left: 50%;
+        background-color: rgb(99, 99, 107);
+    }
+    69% {
+        margin-left: 50%;
+        background-color: rgb(187, 86, 165);
+    }
+    78% {
+        margin-left: 100%;
+        background-color: rgb(86, 187, 165);
+    }
+    94% {
+        margin-left: 0%;
+        background-color: rgb(41, 41, 85);
+    }
+    100% {
+        margin-left: 100%;
+        background-color: pink;
+    }
+  }
 
-20% {
-margin-left: 50%;
-}
-
-35% {
-margin-left: 35%;
-}
-
-45% {
-margin-left: 35%;
-}
-
-51% {
-margin-left: 35%;
-}
-
-54% {
-margin-left: 40%;
-}
-
-57% {
-margin-left: 60%;
-}
-
-60% {
-margin-left: 50%;
-}
-
-63% {
-margin-left: 75%;
-}
-
-66% {
-margin-left: 60%;
-}
-
-69% {
-margin-left: 70%;
-}
-
-92% {
-margin-left: 14%;
-}
-
-100% {
-margin-left: 0%;
-}
-}
 .head {
 background: white;
 width: 50%;
@@ -111,11 +93,64 @@ margin-left: auto;
 margin-right: auto;
 border-radius: 10%;
 }
+
+.right_leg{
+    background: black;
+    width: 20%;
+    height: 150px;
+    margin-top: -10px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 10%;
+   animation: right_leg_move 2s infinite;
+   transform-origin: 0;
+}
+
+@keyframes right_leg_move {
+    0% {
+        margin-left: 50%;
+        transform: rotate(0deg);
+    }
+    50% {
+        margin-left: 60%;
+        transform: rotate(-35deg);
+    }
+    100% {
+        margin-left: 50%;
+        transform: rotate(0deg);
+    }
+}
+
+.left_leg{
+    background: black;
+    width: 20%;
+    height: 150px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 10%;
+   animation: left_leg_move 2s infinite;
+   transform-origin: 0;
+}
+
+@keyframes left_leg_move {
+    0% {
+        margin-left: 50%;
+        transform: rotate(0deg);
+    }
+    50% {
+        margin-left: 60%;
+        transform: rotate(35deg);
+    }
+    100% {
+        margin-left: 50%;
+        transform: rotate(0deg);
+    }
+}
 </style>
 </head>
 <body>
 <div class="stage">
-<video width="640" height="480" controls>
+<video autoplay muted playsinline loop width="640" height="480" controls onloadeddata="true" >
   <source src="RobotMoves_1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -124,8 +159,13 @@ Your browser does not support the video tag.
 </div>
 <div class="body">
 </div>
+<div class="right_leg"> <div class="left_leg"></div></div>
 </div>
 </div>
+</div>
+</div>
+
+</body>
 
 </body>
 
