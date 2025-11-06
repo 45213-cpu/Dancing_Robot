@@ -95,12 +95,11 @@ border-radius: 10%;
 }
 
 .right_leg{
-    background: black;
+    background: orange;
     width: 20%;
     height: 150px;
     margin-top: -10px;
-   margin-left: auto;
-   margin-right: auto;
+   margin-left: 55%;
    border-radius: 10%;
    animation: right_leg_move 2s infinite;
    transform-origin: 0;
@@ -108,41 +107,43 @@ border-radius: 10%;
 
 @keyframes right_leg_move {
     0% {
-        margin-left: 50%;
+        margin-left: 55%;
         transform: rotate(0deg);
     }
     50% {
-        margin-left: 60%;
-        transform: rotate(-35deg);
+        margin-left: 65%;
+        transform: rotate(-30deg);
     }
     100% {
-        margin-left: 50%;
+        margin-left: 55%;
         transform: rotate(0deg);
     }
 }
 
 .left_leg{
-    background: black;
+    background: green;
     width: 20%;
     height: 150px;
-   margin-left: auto;
-   margin-right: auto;
+    margin-top: -10px;
+   margin-left: 25%;
    border-radius: 10%;
    animation: left_leg_move 2s infinite;
    transform-origin: 0;
+   float: left;
 }
 
 @keyframes left_leg_move {
     0% {
-        margin-left: 50%;
+        margin-left: 25%;
         transform: rotate(0deg);
     }
     50% {
-        margin-left: 60%;
-        transform: rotate(35deg);
+        margin-left: 15%;
+        margin-top: -30px;
+        transform: rotate(30deg);
     }
     100% {
-        margin-left: 50%;
+        margin-left: 25%;
         transform: rotate(0deg);
     }
 }
@@ -158,14 +159,11 @@ Your browser does not support the video tag.
 <div class="head">
 </div>
 <div class="body">
-</div>
-<div class="right_leg"> <div class="left_leg"></div></div>
-</div>
+</div><div class="left_leg"></div><div class="right_leg"></div>
 </div>
 </div>
 </div>
-
-</body>
+</div>
 
 </body>
 
