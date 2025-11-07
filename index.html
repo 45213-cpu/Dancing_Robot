@@ -38,7 +38,7 @@ width: 240px;
 height: 400px;
 margin-top: 160px;
 
-/* animation: body 19s infinite; */
+animation: body 19s infinite;
 }
 
 @keyframes body {
@@ -47,7 +47,7 @@ margin-top: 160px;
         background-color: red;
     }
     8% {
-        margin-left: 100%;
+        margin-left: 89%;
         background-color: rgb(241, 161, 147);
     }
     23% {
@@ -63,7 +63,7 @@ margin-top: 160px;
         background-color: rgb(187, 86, 165);
     }
     78% {
-        margin-left: 100%;
+        margin-left: 89%;
         background-color: rgb(86, 187, 165);
     }
     94% {
@@ -71,7 +71,7 @@ margin-top: 160px;
         background-color: rgb(41, 41, 85);
     }
     100% {
-        margin-left: 100%;
+        margin-left: 89%;
         background-color: pink;
     }
   }
@@ -105,7 +105,7 @@ border-radius: 10%;
    transform-origin: 0;
 }
 
-@keyframes right_leg_move {
+/* @keyframes right_leg_move {
     0% {
         margin-left: 55%;
         transform: rotate(0deg);
@@ -118,7 +118,7 @@ border-radius: 10%;
         margin-left: 55%;
         transform: rotate(0deg);
     }
-}
+} */
 
 .left_leg{
     background: green;
@@ -127,26 +127,98 @@ border-radius: 10%;
     margin-top: -10px;
    margin-left: 25%;
    border-radius: 10%;
-   animation: left_leg_move 2s infinite;
+   animation: left_leg_move 11s linear infinite;
+   animation-delay: 7.05s;
    transform-origin: 0;
    float: left;
 }
-
+/* 40.077%
+41.348%
+46.766%
+49.917%
+51.409%
+58.043%
+61.359%
+ */
 @keyframes left_leg_move {
+    38.971% {
+        margin-left: 25%;
+        transform: rotate(0deg);
+    }
+    40.077% {
+        margin-left: 15%;
+        transform: rotate(30deg);
+    }
+    41.348% {
+        margin-left: 25%;
+        transform: rotate(0deg);
+    }
+    46.766% {
+        margin-left: 25%;
+        transform: rotate(0deg);
+    }
+    49.917% {
+        margin-left: 15%;
+        transform: rotate(30deg);
+    }
+    51.409% {
+        margin-left: 25%;
+        transform: rotate(0deg);
+    }
+    58.043% {
+        margin-left: 15%;
+        transform: rotate(30deg);
+    }
+    61.359% {
+        margin-left: 25%;
+        transform: rotate(0deg);
+    }
+    100% {
+        
+    }
+}
+
+
+/* @keyframes left_leg_move {
     0% {
         margin-left: 25%;
         transform: rotate(0deg);
     }
-    50% {
+    38.971% {
         margin-left: 15%;
         margin-top: -30px;
+        transform: rotate(30deg);
+    }
+    40.63% {
+        margin-left: 25%;
+        transform: rotate(0deg);
+    }
+    46.545% {
+        margin-left: 25%;
+        transform: rotate(0deg);
+    }
+    46.821% {
+        margin-left: 15%;
+        transform: rotate(30deg);
+    }
+    50% {
+        margin-left: 25%;
+        transform: rotate(0deg);
+    }
+    56.329% {
+        margin-left: 25%;
+        transform: rotate(0deg);
+    }
+    56.771% {
+        margin-left: 15%;
         transform: rotate(30deg);
     }
     100% {
         margin-left: 25%;
         transform: rotate(0deg);
     }
-}
+} */
+
 </style>
 </head>
 <body>
