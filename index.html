@@ -37,6 +37,7 @@ margin-top: -20px;
 width: 240px;
 height: 400px;
 margin-top: 160px;
+position: relative;
 
 animation: body 19s infinite;
 }
@@ -95,84 +96,67 @@ border-radius: 10%;
 }
 
 .right_leg{
+    position: absolute;
+    bottom: 0;
     background: orange;
     width: 20%;
     height: 150px;
-    margin-top: -10px;
-   margin-left: 55%;
+   left: 55%;
    border-radius: 10%;
-   animation: right_leg_move 18s infinite;
-   animation-duration: 1.5s;
-   animation-iteration-count: 3;
-   animation-delay: 7s;
-   transform-origin: 0;
+   animation: right_leg_move 2s linear 8s 3;
+   transform-origin: top center;
 }
 
 @keyframes right_leg_move {
     0% {
-        margin-right: 55%;
         transform: rotate(0deg);
     }
-    20% {
-        margin-right: 40%;
+    20% { 
         transform: rotate(-10deg);
     }
     40% {
-        margin-right: 45%;
         transform: rotate(-30deg);
     }
     60% {
-        margin-right: 40%;
         transform: rotate(-10deg);
     }
     80% {
-        margin-right: 50%;
         transform: rotate(0deg);
     }
     100% {
-        margin-right: 55%;
         transform: rotate(0deg);
     }
 }
 
 .left_leg{
+    position: absolute;
+    bottom: 0;
     background: green;
     width: 20%;
     height: 150px;
-    margin-top: -10px;
-   margin-left: 25%;
+   left: 25%;
    border-radius: 10%;
-   animation: left_leg_move 18s linear infinite;
-   animation-duration: 2s;
-   animation-delay: 6.5s;
-   animation-iteration-count: 3;
-   transform-origin: 0;
-   float: left;
+   animation: left_leg_move 2s linear 6.5s 3;
+   transform-origin: top center;
 }
 
 @keyframes left_leg_move {
     0% {
-        margin-left: 25%;
         transform: rotate(0deg);
     }
     20% {
-        margin-left: 20%;
         transform: rotate(10deg);
     }
     40% {
-        margin-left: 15%;
         transform: rotate(30deg);
     }
     60% {
-        margin-left: 20%;
         transform: rotate(10deg);
     }
     80% {
-        margin-left: 25%;
         transform: rotate(0deg);
     }
     100% {
-        margin-left: 25%;
         transform: rotate(0deg);
     }
 }
