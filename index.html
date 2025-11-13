@@ -26,6 +26,8 @@ margin-left: auto;
 margin-right: auto;
 }
 
+/* Body */
+
 .wholebody {
 background: red;
 
@@ -39,43 +41,43 @@ height: 400px;
 margin-top: 160px;
 position: relative;
 
-animation: body 19s infinite;
+animation: body 20s infinite;
 }
 
 @keyframes body {
     0% {
         margin-left: 50%;
-        background-color: red;
+            background-color: red; 
     }
     8% {
         margin-left: 89%;
-        background-color: rgb(241, 161, 147);
+            background-color: rgb(241, 161, 147); 
     }
     23% {
         margin-left: 0%;
-        background-color: rgb(81, 81, 216);
+            background-color: rgb(81, 81, 216); 
     }
     33% {
         margin-left: 50%;
-        background-color: rgb(99, 99, 107);
+        background-color: rgb(99, 99, 107); 
     }
     69% {
         margin-left: 50%;
-        background-color: rgb(187, 86, 165);
+            background-color: rgb(187, 86, 165); 
     }
     78% {
         margin-left: 89%;
-        background-color: rgb(86, 187, 165);
+            background-color: rgb(86, 187, 165); 
     }
     94% {
         margin-left: 0%;
-        background-color: rgb(41, 41, 85);
+            background-color: rgb(41, 41, 85); 
     }
     100% {
         margin-left: 89%;
-        background-color: pink;
+            background-color: pink; 
     }
-  }
+    }
 
 .head {
 background: white;
@@ -95,6 +97,8 @@ margin-right: auto;
 border-radius: 10%;
 }
 
+/* Right Leg */
+
 .right_leg{
     position: absolute;
     bottom: 0;
@@ -103,8 +107,10 @@ border-radius: 10%;
     height: 150px;
    left: 55%;
    border-radius: 10%;
-   animation: right_leg_move 2s linear 8s 3;
+   animation: right_leg_move 1.5s linear;
    transform-origin: top center;
+   animation-delay: 8s;
+   animation-iteration-count: 2;
 }
 
 @keyframes right_leg_move {
@@ -114,8 +120,14 @@ border-radius: 10%;
     20% { 
         transform: rotate(-10deg);
     }
+    30% { 
+        transform: rotate(-20deg);
+    }
     40% {
         transform: rotate(-30deg);
+    }
+    50% { 
+        transform: rotate(-20deg);
     }
     60% {
         transform: rotate(-10deg);
@@ -128,6 +140,8 @@ border-radius: 10%;
     }
 }
 
+/* Left Leg */
+
 .left_leg{
     position: absolute;
     bottom: 0;
@@ -136,8 +150,10 @@ border-radius: 10%;
     height: 150px;
    left: 25%;
    border-radius: 10%;
-   animation: left_leg_move 2s linear 6.5s 3;
+   animation: left_leg_move 1.75s linear;
    transform-origin: top center;
+   animation-delay: 7s;
+   animation-iteration-count: 3;
 }
 
 @keyframes left_leg_move {
@@ -161,7 +177,111 @@ border-radius: 10%;
     }
 }
 
+/* Right Arm */
 
+.right_arm{
+    position: absolute;
+    background: green;
+    width: 20%;
+    height: 150px;
+    right: 15%;
+    top: 20%;
+    border-radius: 20%;
+    transform-origin: top left;
+    animation: right_arm_move 1.30s linear 6.75s 5;
+}
+
+@keyframes right_arm_move {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    25% {
+        transform: rotate(-25deg);
+    }
+    30% {
+        transform: rotate(-50deg);
+    }
+    35% {
+        transform: rotate(-75deg);
+    }
+    40% {
+        transform: rotate(-90deg);
+    }
+    45% {
+        transform: rotate(-75deg);
+    }
+    50% {
+        transform: rotate(-50deg);
+    }
+    55% {
+        transform: rotate(-25deg);
+    }
+    60% {
+        transform: rotate(-10deg);
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Left Arm */
+
+.left_arm{
+    position: absolute;
+    background: rgb(54, 75, 114);
+    width: 20%;
+    height: 150px;
+    left: 15%;
+    top: 20%;
+    border-radius: 20%;
+    transform-origin: top right;
+    animation: left_arm_move 1.30s linear 6s 5;
+}
+
+@keyframes left_arm_move {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(10deg);
+    }
+    25% {
+        transform: rotate(25deg);
+    }
+    30% {
+        transform: rotate(50deg);
+    }
+    35% {
+        transform: rotate(75deg);
+    }
+    40% {
+        transform: rotate(90deg);
+    }
+    45% {
+        transform: rotate(75deg);
+    }
+    50% {
+        transform: rotate(50deg);
+    }
+    55% {
+        transform: rotate(25deg);
+    }
+    60% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
 </style>
 </head>
 <body>
@@ -173,7 +293,8 @@ Your browser does not support the video tag.
 <div class="wholebody">
 <div class="head">
 </div>
-<div class="body">
+<div class="body"> 
+    <div class="left_arm"></div><div class="right_arm"></div>
 </div><div class="left_leg"></div><div class="right_leg"></div>
 </div>
 </div>
