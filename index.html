@@ -44,7 +44,7 @@ position: relative;
 animation: body 20s infinite;
 }
 
-@keyframes body {
+/* @keyframes body {
     0% {
         margin-left: 50%;
             background-color: red; 
@@ -77,7 +77,7 @@ animation: body 20s infinite;
         margin-left: 89%;
             background-color: pink; 
     }
-    }
+    } */
 
 .head {
 background: white;
@@ -89,7 +89,7 @@ margin-right: auto;
 border-radius: 50%;
 }
 .body {
-background: black;
+background: #ccbcb6;
 width: 50%;
 height: 200px;
 margin-left: auto;
@@ -102,7 +102,7 @@ border-radius: 10%;
 .right_leg{
     position: absolute;
     bottom: 0;
-    background: orange;
+    background: #33372f;
     width: 20%;
     height: 150px;
    left: 55%;
@@ -145,7 +145,7 @@ border-radius: 10%;
 .left_leg{
     position: absolute;
     bottom: 0;
-    background: green;
+    background: #33372f;
     width: 20%;
     height: 150px;
    left: 25%;
@@ -181,7 +181,7 @@ border-radius: 10%;
 
 .right_arm{
     position: absolute;
-    background: green;
+    background: #e8b59a;
     width: 20%;
     height: 150px;
     right: 15%;
@@ -230,11 +230,33 @@ border-radius: 10%;
     }
 }
 
+/* Sweater over shoulder */
+
+/* .sweater{
+    position: absolute;
+    background: #272e2c;
+    width: 50%;
+    height: 25%;
+    transform: rotate(-8deg);
+    border-radius: 10%;
+    transform-origin: top left;
+} */
+
+.sweater{
+    background: #272e2c;
+    width: 100%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
 /* Left Arm */
 
 .left_arm{
     position: absolute;
-    background: rgb(54, 75, 114);
+    background: #272e2c;
     width: 20%;
     height: 150px;
     left: 15%;
@@ -282,6 +304,19 @@ border-radius: 10%;
         transform: rotate(0deg);
     }
 }
+
+/* Left hand */
+
+.left_hand{
+    position: absolute;
+    background: #e8b59a;
+    height: 30px;
+    width: 45px;
+    left: 2%;
+    bottom: -10%;
+    border-radius: 10%;
+}
+
 </style>
 </head>
 <body>
@@ -293,9 +328,14 @@ Your browser does not support the video tag.
 <div class="wholebody">
 <div class="head">
 </div>
-<div class="body"> 
-    <div class="left_arm"></div><div class="right_arm"></div>
-</div><div class="left_leg"></div><div class="right_leg"></div>
+<div class="body"><div class="sweater"></div>
+<div class="left_arm">
+    <div class="left_hand"></div>
+</div>
+<div class="right_arm"></div>
+</div>
+<div class="left_leg"></div> 
+    <div class="right_leg"></div>
 </div>
 </div>
 </div>
