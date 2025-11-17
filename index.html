@@ -6,10 +6,14 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>Robot</title>
 <style>
 
 .stage {
+background: url(Screenshot\ 2025-11-17\ 122334.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
 top: 50%;
 font-size: 40px;
 text-align: center;
@@ -17,10 +21,6 @@ left: 0px;
 top: 0px;
 width: 90%;
 height: 50%;
-background: #ddd;
-border-style: solid;
-border-width: 5px;
-border-color: black;
 overflow: hidden;
 margin-left: auto;
 margin-right: auto;
@@ -37,7 +37,7 @@ margin-right: auto;
 margin-left: 10px;
 margin-top: -20px;
 width: 240px;
-height: 435px;
+height: 500px;
 margin-top: 160px;
 position: relative;
 
@@ -50,11 +50,11 @@ animation: body 20s infinite;
             /* background-color: red;  */
     }
     8% {
-        margin-left: 89%;
+        margin-left: 70%;
             /* background-color: rgb(241, 161, 147);  */
     }
     23% {
-        margin-left: 0%;
+        margin-left: 30%;
             /* background-color: rgb(81, 81, 216);  */
     }
     33% {
@@ -66,15 +66,15 @@ animation: body 20s infinite;
             /* background-color: rgb(187, 86, 165);  */
     }
     78% {
-        margin-left: 89%;
+        margin-left: 70%;
             /* background-color: rgb(86, 187, 165);  */
     }
     94% {
-        margin-left: 0%;
+        margin-left: 30%;
             /* background-color: rgb(41, 41, 85);  */
     }
     100% {
-        margin-left: 89%;
+        margin-left: 30%;
             /* background-color: pink;  */
     }
     }
@@ -103,7 +103,7 @@ border-radius: 10%;
 
 .right_leg{
     position: absolute;
-    bottom: 0;
+    top: 58%;
     background: #33372f;
     width: 20%;
     height: 150px;
@@ -146,7 +146,7 @@ border-radius: 10%;
 
 .left_leg{
     position: absolute;
-    bottom: 0;
+    top: 58%;
     background: #33372f;
     width: 20%;
     height: 150px;
@@ -311,8 +311,7 @@ border-radius: 10%;
 
 </style>
 </head>
-<body>
-<div class="stage">
+<body class="stage">
 <video autoplay muted playsinline loop width="640" height="480" controls onloadeddata="true" >
   <source src="RobotMoves_1.mp4" type="video/mp4">
 Your browser does not support the video tag.
