@@ -10,17 +10,17 @@
 <style>
 
 .stage {
-background: url(Screenshot\ 2025-11-17\ 122334.png);
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-top: 50%;
+top: 150px;
 font-size: 40px;
 text-align: center;
 left: 0px;
 top: 0px;
 width: 90%;
-height: 50%;
+height: 1100px;
+background: #ddd;
+border-style: solid;
+border-width: 5px;
+border-color: black;
 overflow: hidden;
 margin-left: auto;
 margin-right: auto;
@@ -29,10 +29,6 @@ margin-right: auto;
 /* Body */
 
 .wholebody {
-/* background: red; */
-
-/* To hide uncomment this*/
-/* background: #ddd; */
 
 margin-left: 10px;
 margin-top: -20px;
@@ -47,35 +43,27 @@ animation: body 20s infinite;
 @keyframes body {
     0% {
         margin-left: 50%;
-            /* background-color: red;  */
     }
     8% {
         margin-left: 70%;
-            /* background-color: rgb(241, 161, 147);  */
     }
     23% {
         margin-left: 30%;
-            /* background-color: rgb(81, 81, 216);  */
     }
     33% {
         margin-left: 50%;
-        /* background-color: rgb(99, 99, 107);  */
     }
     69% {
         margin-left: 50%;
-            /* background-color: rgb(187, 86, 165);  */
     }
     78% {
         margin-left: 70%;
-            /* background-color: rgb(86, 187, 165);  */
     }
     94% {
         margin-left: 30%;
-            /* background-color: rgb(41, 41, 85);  */
     }
     100% {
         margin-left: 30%;
-            /* background-color: pink;  */
     }
     }
 
@@ -309,10 +297,20 @@ border-radius: 10%;
     border-radius: 10%;
 }
 
+.autoplay-btn {
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    z-index: 10;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
 </style>
 </head>
 <body class="stage">
-<video autoplay muted playsinline loop width="640" height="480" controls onloadeddata="true" >
+    <button id="autoplayToggle" class="autoplay-btn">Autoplay: On · Animations: Running</button>
+<video id="mainVideo" autoplay muted playsinline loop width="640" height="480" controls onloadeddata="true" >
   <source src="RobotMoves_1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -333,5 +331,57 @@ Your browser does not support the video tag.
 </div>
 
 </body>
+
+<script>
+
+(function () {
+  const btn = document.getElementById('autoplayToggle');
+  const vid = document.getElementById('mainVideo');
+
+  // compute initial states
+  let animationsPaused = false;
+
+    function updateLabel() {
+        const auto = (vid && typeof vid.autoplay !== 'undefined') ? (vid.autoplay ? 'On' : 'Off') : 'Off';
+        const anim = animationsPaused ? 'Paused' : 'Running';
+        btn.textContent = `Autoplay: ${auto} · Animations: ${anim}`;
+    }
+
+  // toggle animations by setting inline animationPlayState on any element with an active animation
+  
+    function setAnimationsPaused(paused) {
+        document.querySelectorAll('*').forEach(el => {
+            const cs = getComputedStyle(el);
+            // animationName can be a comma-separated list; 'none' means no animation
+            if (cs.animationName && cs.animationName !== 'none') {
+                el.style.animationPlayState = paused ? 'paused' : 'running';
+            }
+        });
+    }
+
+  btn.addEventListener('click', () => {
+        // toggle autoplay on the video element (guard if video is missing)
+        if (vid) {
+            vid.autoplay = !vid.autoplay;
+
+            if (vid.autoplay) {
+                vid.play().catch(() => { /* autoplay may be blocked by browser */ });
+            } else {
+                vid.pause();
+            }
+        }
+
+    // toggle animations
+    animationsPaused = !animationsPaused;
+    setAnimationsPaused(animationsPaused);
+
+    updateLabel();
+  });
+
+  // initialize UI to reflect current state
+  updateLabel();
+})();
+
+</script>
 
 </html>
