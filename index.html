@@ -9,6 +9,15 @@
 <title>Robot</title>
 <style>
 
+.background {
+    background-color: beige;
+    position: fixed;
+    top: 10px;
+    width: 90%;
+    height: 1100px;
+    z-index: -1;
+}
+
 .stage {
 top: 150px;
 font-size: 40px;
@@ -309,11 +318,13 @@ border-radius: 10%;
 </style>
 </head>
 <body class="stage">
+    
     <button id="autoplayToggle" class="autoplay-btn">Autoplay: On · Animations: Running</button>
 <video id="mainVideo" autoplay muted playsinline loop width="640" height="480" controls onloadeddata="true" >
   <source src="RobotMoves_1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
+<div class="background"></div>
 <div class="wholebody">
 <div class="head">
 </div>
